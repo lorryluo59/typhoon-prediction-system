@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台风预测系统</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="/static/style.css?v=3">
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <h1>台风预测系统</h1>
+    <span class="subtitle">实时路径 · 分区影响预测</span>
+  </div>
+  <div class="controls">
+    <label>城市
+      <select id="citySelect"></select>
+    </label>
+    <label>台风
+      <select id="typhoonSelect"></select>
+    </label>
+    <label>着色
+      <select id="colorMode">
+        <option value="severity">综合影响</option>
+        <option value="wind">风力等级</option>
+        <option value="rain">降水等级</option>
+      </select>
+    </label>
+    <button id="refreshBtn" title="立即刷新">刷新</button>
+  </div>
+</header>
+
+<div id="alertBanner" class="alert none">
+  <span class="alert-icon">ℹ️</span>
+  <span id="alertText">加载中…</span>
+  <span id="alertMeta"></span>
+</div>
+<div id="errorBanner" class="error hidden"></div>
+
+<main>
+  <section id="mapWrap">
+    <div id="map"></div>
+    <div id="hint" class="map-hint">点击分区或卡片查看详情，点击地图空白处取消</div>
+    <div id="legend" class="legend"></div>
+    <div id="trackInfo" class="track-info"></div>
+  </section>
+  <aside id="panel">
+    <div class="panel-head">
+      <h2 id="panelTitle">各区域影响预测</h2>
+      <span id="generatedAt"></span>
+    </div>
+    <div id="districtCards" class="cards"></div>
+  </aside>
+</main>
+
+<footer>数据来源：中央气象台台风网（typhoon.nmc.cn）· 分区边界：DataV GeoAtlas · 预测为启发式解析模型，仅供参考，请以官方预警为准</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="/static/app.js?v=3"></script>
+</body>
+</html>

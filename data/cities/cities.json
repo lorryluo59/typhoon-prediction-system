@@ -1,0 +1,512 @@
+{
+  "cities": [
+    {
+      "id": "shenzhen",
+      "name": "深圳",
+      "adcode": 440300,
+      "center": [
+        114.0579,
+        22.5431
+      ],
+      "file": "shenzhen.json",
+      "districts": {
+        "福田区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "罗湖区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "南山区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "盐田区": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "宝安区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "龙岗区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "龙华区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "坪山区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "光明区": {
+          "coastal": false,
+          "flood_prone": true
+        }
+      }
+    },
+    {
+      "id": "guangzhou",
+      "name": "广州",
+      "adcode": 440100,
+      "center": [
+        113.2644,
+        23.1291
+      ],
+      "file": "guangzhou.json",
+      "districts": {
+        "荔湾区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "越秀区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "海珠区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "天河区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "白云区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "黄埔区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "番禺区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "花都区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "南沙区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "从化区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "增城区": {
+          "coastal": false,
+          "flood_prone": false
+        }
+      }
+    },
+    {
+      "id": "shanghai",
+      "name": "上海",
+      "adcode": 310000,
+      "center": [
+        121.4737,
+        31.2304
+      ],
+      "file": "shanghai.json",
+      "districts": {
+        "黄浦区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "徐汇区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "长宁区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "静安区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "普陀区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "虹口区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "杨浦区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "闵行区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "宝山区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "嘉定区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "浦东新区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "金山区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "松江区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "青浦区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "奉贤区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "崇明区": {
+          "coastal": true,
+          "flood_prone": true
+        }
+      }
+    },
+    {
+      "id": "hangzhou",
+      "name": "杭州",
+      "adcode": 330100,
+      "center": [
+        120.1551,
+        30.2741
+      ],
+      "file": "hangzhou.json",
+      "districts": {
+        "上城区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "拱墅区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "西湖区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "滨江区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "萧山区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "余杭区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "富阳区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "临安区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "钱塘区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "临平区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "桐庐县": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "淳安县": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "建德市": {
+          "coastal": false,
+          "flood_prone": false
+        }
+      }
+    },
+    {
+      "id": "ningbo",
+      "name": "宁波",
+      "adcode": 330200,
+      "center": [
+        121.5503,
+        29.8746
+      ],
+      "file": "ningbo.json",
+      "districts": {
+        "海曙区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "江北区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "北仑区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "镇海区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "鄞州区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "奉化区": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "象山县": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "宁海县": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "余姚市": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "慈溪市": {
+          "coastal": true,
+          "flood_prone": true
+        }
+      }
+    },
+    {
+      "id": "xiamen",
+      "name": "厦门",
+      "adcode": 350200,
+      "center": [
+        118.0894,
+        24.4798
+      ],
+      "file": "xiamen.json",
+      "districts": {
+        "思明区": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "海沧区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "湖里区": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "集美区": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "同安区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "翔安区": {
+          "coastal": true,
+          "flood_prone": true
+        }
+      }
+    },
+    {
+      "id": "fuzhou",
+      "name": "福州",
+      "adcode": 350100,
+      "center": [
+        119.2965,
+        26.0745
+      ],
+      "file": "fuzhou.json",
+      "districts": {
+        "鼓楼区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "台江区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "仓山区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "马尾区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "晋安区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "长乐区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "闽侯县": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "连江县": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "罗源县": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "闽清县": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "永泰县": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "平潭县": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "福清市": {
+          "coastal": true,
+          "flood_prone": true
+        }
+      }
+    },
+    {
+      "id": "wenzhou",
+      "name": "温州",
+      "adcode": 330300,
+      "center": [
+        120.6994,
+        27.9943
+      ],
+      "file": "wenzhou.json",
+      "districts": {
+        "鹿城区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "龙湾区": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "瓯海区": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "洞头区": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "永嘉县": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "平阳县": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "苍南县": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "文成县": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "泰顺县": {
+          "coastal": false,
+          "flood_prone": false
+        },
+        "瑞安市": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "乐清市": {
+          "coastal": true,
+          "flood_prone": true
+        },
+        "龙港市": {
+          "coastal": true,
+          "flood_prone": true
+        }
+      }
+    },
+    {
+      "id": "zhuhai",
+      "name": "珠海",
+      "adcode": 440400,
+      "center": [
+        113.5767,
+        22.2707
+      ],
+      "file": "zhuhai.json",
+      "districts": {
+        "香洲区": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "斗门区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "金湾区": {
+          "coastal": true,
+          "flood_prone": true
+        }
+      }
+    },
+    {
+      "id": "haikou",
+      "name": "海口",
+      "adcode": 460100,
+      "center": [
+        110.1999,
+        20.0442
+      ],
+      "file": "haikou.json",
+      "districts": {
+        "秀英区": {
+          "coastal": true,
+          "flood_prone": false
+        },
+        "龙华区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "琼山区": {
+          "coastal": false,
+          "flood_prone": true
+        },
+        "美兰区": {
+          "coastal": true,
+          "flood_prone": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+/* 台风预测系统 - 简约风样式 */
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #fafbfc;
+  --text: #1f2328;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 1px 3px rgba(16, 24, 40, .07);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  background: var(--bg); color: var(--text); display: flex; flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- header ---- */
+header {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  padding: 14px 24px; background: var(--surface); border-bottom: 1px solid var(--border);
+}
+.header-left { display: flex; align-items: baseline; gap: 10px; }
+.header-left h1 { font-size: 18px; font-weight: 650; letter-spacing: .2px; }
+.subtitle { font-size: 12px; color: var(--muted); }
+.controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.controls label { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.controls select {
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px 10px; font-size: 13px; outline: none; cursor: pointer;
+  transition: border-color .15s, box-shadow .15s;
+}
+.controls select:hover { border-color: #cbd5e1; }
+.controls select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37, 99, 235, .12); }
+.controls button {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  padding: 6px 14px; font-size: 13px; cursor: pointer; color: var(--text);
+  transition: all .15s;
+}
+.controls button:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---- alert / error ---- */
+#alertBanner {
+  display: flex; align-items: center; gap: 10px; padding: 10px 24px; font-size: 14px;
+  border-bottom: 1px solid var(--border); transition: background .2s;
+}
+#alertBanner .alert-icon { font-size: 15px; }
+#alertBanner.none { background: var(--bg); color: #4b5563; }
+#alertBanner.possible { background: #fffbeb; color: #92400e; }
+#alertBanner.imminent { background: #fff7ed; color: #9a3412; }
+#alertBanner.active { background: #fef2f2; color: #b91c1c; }
+#alertMeta { color: var(--muted); font-size: 12px; margin-left: auto; }
+#errorBanner { background: #fef2f2; color: #b91c1c; padding: 10px 24px; font-size: 13px; border-bottom: 1px solid var(--border); }
+
+/* ---- layout ---- */
+main { flex: 1; display: flex; min-height: 0; }
+#mapWrap { flex: 1.4; position: relative; min-width: 0; }
+#map { height: 100%; width: 100%; background: #eef0f3; }
+#panel {
+  flex: 1; min-width: 340px; max-width: 500px; overflow-y: auto;
+  background: var(--surface); border-left: 1px solid var(--border);
+}
+.panel-head { padding: 14px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.panel-head h2 { font-size: 15px; font-weight: 600; }
+#generatedAt { font-size: 11px; color: var(--muted); white-space: nowrap; }
+
+/* ---- district cards ---- */
+.cards { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-left: 3px solid #cbd5e1;
+  border-radius: var(--radius); padding: 12px 14px; cursor: pointer;
+  transition: box-shadow .15s, border-color .15s, transform .1s;
+}
+.card:hover { box-shadow: var(--shadow); border-color: #cbd5e1; transform: translateY(-1px); }
+.card.active { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37, 99, 235, .10); }
+.card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.card-head h3 { font-size: 15px; font-weight: 600; }
+.badge { font-size: 11px; padding: 2px 9px; border-radius: 999px; font-weight: 600; }
+.dist { font-size: 12px; color: var(--muted); }
+.metric { display: flex; gap: 8px; flex-wrap: wrap; font-size: 13px; margin-top: 8px; }
+.metric .m { background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 9px; flex: 1 1 40%; min-width: 150px; }
+.metric .m .k { color: var(--muted); font-size: 11px; display: block; margin-bottom: 2px; }
+.metric .m .v { font-size: 13px; }
+
+/* 严重度配色（徽章 + 卡片左边条） */
+.sev0 { background: #ecfdf5; color: #047857; }
+.sev1 { background: #f7fee7; color: #4d7c0f; }
+.sev2 { background: #fffbeb; color: #b45309; }
+.sev3 { background: #fff7ed; color: #c2410c; }
+.sev4 { background: #fef2f2; color: #b91c1c; }
+.sev5 { background: #fee2e2; color: #991b1b; }
+.card.sev0 { border-left-color: #a7f3d0; }
+.card.sev1 { border-left-color: #d9f99d; }
+.card.sev2 { border-left-color: #fcd34d; }
+.card.sev3 { border-left-color: #fdba74; }
+.card.sev4 { border-left-color: #fca5a5; }
+.card.sev5 { border-left-color: #f87171; }
+
+/* ---- map overlays ---- */
+.legend, .track-info {
+  position: absolute; z-index: 1000; background: rgba(255, 255, 255, .94);
+  border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow);
+  font-size: 12px; color: #374151;
+}
+.legend { left: 12px; bottom: 24px; padding: 10px 14px; }
+.legend .l-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+.legend .l-row:first-child { margin-top: 0; }
+.legend .swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+.track-info { right: 12px; top: 12px; padding: 10px 14px; max-width: 270px; line-height: 1.5; }
+.track-info .ti { margin: 2px 0; }
+
+/* 地图上的名称标签（城市 / 台风 / 分区） */
+.city-pill, .typhoon-pill {
+  background: rgba(255, 255, 255, .96); border: 1px solid var(--border);
+  box-shadow: var(--shadow); border-radius: 999px; padding: 4px 12px;
+  font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap;
+}
+.city-pill { border-color: var(--accent); color: var(--accent); }
+.leaflet-tooltip.district-label {
+  background: rgba(17, 24, 39, .85); color: #fff; border: none; border-radius: 8px;
+  padding: 4px 10px; font-size: 13px; font-weight: 600; box-shadow: var(--shadow);
+}
+.leaflet-tooltip.district-label::before { display: none; }
+.leaflet-tooltip.citytip { background: rgba(255,255,255,.95); color: var(--text); border-color: var(--border); box-shadow: var(--shadow); }
+
+footer { padding: 8px 24px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); background: var(--surface); }
+.hidden { display: none !important; }
+.leaflet-container { font-family: inherit; }
+
+/* 地图操作提示 */
+.map-hint {
+  position: absolute; left: 50%; top: 12px; transform: translateX(-50%); z-index: 1000;
+  background: rgba(255, 255, 255, .92); border: 1px solid var(--border);
+  border-radius: 999px; box-shadow: var(--shadow); padding: 5px 14px;
+  font-size: 12px; color: var(--muted); pointer-events: none; white-space: nowrap;
+}
+@media (max-width: 900px) { .map-hint { display: none; } }
